@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import { useChat } from 'ai/react'
+import { useEffect, useRef } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Slider } from '@/components/ui/slider'
@@ -18,6 +19,8 @@ export default function ThankYouGPT() {
   const [lines, setLines] = React.useState(6)
   const [formality, setFormality] = React.useState(3)
   const [eventType, setEventType] = React.useState('Coffee chat')
+  const messagesEndRef = useRef<HTMLDivElement>(null)
+
 
   const { messages, input, handleInputChange, handleSubmit } = useChat({
     api: '/api/chat',
@@ -34,7 +37,9 @@ export default function ThankYouGPT() {
       }
     ]
   })
-
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }, [messages])
   return (
     <div className="container mx-auto p-4 max-w-6xl">
       <div className="text-center mb-6">
@@ -91,36 +96,38 @@ export default function ThankYouGPT() {
         <div className="bg-white rounded-lg p-4 flex flex-col h-[600px]">
           <div className="flex-1 overflow-y-auto space-y-4">
             {messages.map((message) => (
-              <div
-                key={message.id}
-                className={`flex ${
-                  message.role === 'user' ? 'justify-end' : 'justify-start'
-                }`}
-              >
                 <div
-                  className={`rounded-lg px-4 py-2 max-w-[80%] ${
-                    message.role === 'user'
-                      ? 'bg-primary text-primary-foreground'
-                      : 'bg-muted'
-                  }`}
+                    key={message.id}
+                    className={`flex ${
+                        message.role === 'user' ? 'justify-end' : 'justify-start'
+                    }`}
                 >
-                  <div className="text-xs opacity-70 mb-1">
-                    {new Date().toLocaleTimeString('en-US', {
-                      hour: '2-digit',
-                      minute: '2-digit'
-                    })}
+                  <div
+                      className={`rounded-lg px-4 py-2 max-w-[80%] ${
+                          message.role === 'user'
+                              ? 'bg-primary text-primary-foreground'
+                              : 'bg-muted'
+                      }`}
+                  >
+
+                    <div className="whitespace-pre-wrap">{message.content}</div>
+                    <div className="text-[10px] opacity-70 mb-1">
+                      {new Date().toLocaleTimeString('en-US', {
+                        hour: '2-digit',
+                        minute: '2-digit'
+                      })}
+                    </div>
                   </div>
-                  <div className="whitespace-pre-wrap">{message.content}</div>
                 </div>
-              </div>
             ))}
+            <div ref={messagesEndRef}/>
           </div>
 
           <form onSubmit={handleSubmit} className="mt-4 flex gap-2">
             <Input
-              value={input}
-              onChange={handleInputChange}
-              placeholder="Who did you speak with? About what?"
+                value={input}
+                onChange={handleInputChange}
+                placeholder="Who did you speak with? About what?"
               className="flex-1"
             />
             <Button type="submit" size="icon">
