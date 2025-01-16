@@ -20,6 +20,8 @@ export default function ThankYouGPT() {
   const [formality, setFormality] = React.useState(3)
   const [eventType, setEventType] = React.useState('Coffee chat')
   const messagesEndRef = useRef<HTMLDivElement>(null)
+  const [previousMessagesLength, setPreviousMessagesLength] = React.useState(0);
+
 
 
   const { messages, input, handleInputChange, handleSubmit } = useChat({
@@ -38,11 +40,14 @@ export default function ThankYouGPT() {
     ]
   })
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
-  }, [messages])
+    if (messages.length > previousMessagesLength) {
+      messagesEndRef.current?.scrollIntoView({behavior: "smooth"})
+    }
+    setPreviousMessagesLength(messages.length)
+  }, [previousMessagesLength, messages])
   return (
     <div className="container mx-auto p-4 max-w-6xl">
-      <div className="text-center mb-6">
+      <div className="text-left mb-6">
         <h1 className="text-3xl font-bold text-primary mb-2">ThankYouGPT</h1>
         <p className="text-muted-foreground">Craft engaging thank-you emails in seconds</p>
       </div>
@@ -57,7 +62,7 @@ export default function ThankYouGPT() {
               value={[lines]}
               onValueChange={(value) => setLines(value[0])}
               min={3}
-              max={10}
+              max={9}
               step={1}
             />
             <div className="text-xs text-muted-foreground text-center">{lines} lines</div>
