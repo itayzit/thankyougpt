@@ -14,7 +14,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { SendHorizontal } from "lucide-react";
-import { eventTypeToPrompt, formalityLevels } from "./constants";
+import { eventTypeToPrompt } from "./constants";
 
 export default function ThankYouGPT() {
   const [lines, setLines] = React.useState(6);
