@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/select";
 import { SendHorizontal } from "lucide-react";
 import { eventTypeToPrompt } from "./constants";
+import { v4 as uuidv4 } from "uuid";
 
 export default function ThankYouGPT() {
   const [lines, setLines] = React.useState(6);
@@ -25,10 +26,11 @@ export default function ThankYouGPT() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const [previousMessagesLength, setPreviousMessagesLength] = React.useState(0);
   const [showSuggestions, setShowSuggestions] = useState(true);
+  const [sessionId] = useState(uuidv4());
 
   const suggestions = [
     "Jessica- Mckinsey, started in healthcare (like i did), likes equinox",
-    "Jared- Trust fund, 6'5, blue eyes",
+    "Jared- Trust fund, 6'5, blue eyes...",
   ];
   const { messages, input, handleInputChange, handleSubmit, setInput } =
     useChat({
@@ -37,6 +39,7 @@ export default function ThankYouGPT() {
         lines,
         formality,
         eventType,
+        sessionId,
       },
       initialMessages: [
         {
