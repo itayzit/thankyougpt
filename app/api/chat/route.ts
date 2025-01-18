@@ -9,7 +9,6 @@ const systemPromptTemplate =
 
 export async function POST(req: Request) {
   const { messages, lines, formality, eventType } = await req.json();
-  console.log("blablabla");
   const systemPrompt = systemPromptTemplate
     .replace("{lines}", lines.toString())
     .replace("{eventType}", eventTypeToPrompt[eventType])

@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { useChat } from "ai/react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Slider } from "@/components/ui/slider";
@@ -19,26 +19,34 @@ import { eventTypeToPrompt } from "./constants";
 export default function ThankYouGPT() {
   const [lines, setLines] = React.useState(6);
   const [formality, setFormality] = React.useState(3);
-  const [eventType, setEventType] = React.useState("Coffee chat");
+  const [eventType, setEventType] = React.useState(
+    Object.keys(eventTypeToPrompt)[0],
+  );
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const [previousMessagesLength, setPreviousMessagesLength] = React.useState(0);
+  const [showSuggestions, setShowSuggestions] = useState(true);
 
-  const { messages, input, handleInputChange, handleSubmit } = useChat({
-    api: "/api/chat",
-    body: {
-      lines,
-      formality,
-      eventType,
-    },
-    initialMessages: [
-      {
-        id: "1",
-        role: "assistant",
-        content:
-          "Hey! Welcome to ThankYouGPT. Any details you can share from the meeting?",
+  const suggestions = [
+    "Jessica- Mckinsey, started in healthcare (like i did), likes equinox",
+    "Jared- Trust fund, 6'5, blue eyes",
+  ];
+  const { messages, input, handleInputChange, handleSubmit, setInput } =
+    useChat({
+      api: "/api/chat",
+      body: {
+        lines,
+        formality,
+        eventType,
       },
-    ],
-  });
+      initialMessages: [
+        {
+          id: "1",
+          role: "assistant",
+          content:
+            "Hey! Welcome to ThankYouGPT. Any details you can share from the meeting?",
+        },
+      ],
+    });
   useEffect(() => {
     if (messages.length > previousMessagesLength) {
       messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -50,7 +58,7 @@ export default function ThankYouGPT() {
       <div className="text-left mb-6 pl-4 pt-4">
         <h1 className="text-2xl font-bold text-black mb-1"> ThankYouGPT</h1>
         <p className="text-gray-600">
-          Craft engaging thank-you emails in seconds
+          Effortless thank-you emails for ivy league students.
         </p>
       </div>
 
@@ -136,8 +144,30 @@ export default function ThankYouGPT() {
             ))}
             <div ref={messagesEndRef} />
           </div>
-
-          <form onSubmit={handleSubmit} className="mt-4 flex gap-2">
+          {showSuggestions && (
+            <div className="flex flex-wrap gap-2 rounded mb-1 ml-2">
+              {suggestions.map((suggestion, index) => (
+                <Button
+                  key={index}
+                  size="sm"
+                  className="text-sm bg-custom_primary text-gray-600"
+                  onClick={() => {
+                    setInput(suggestion);
+                    setShowSuggestions(false);
+                  }}
+                >
+                  {suggestion}
+                </Button>
+              ))}
+            </div>
+          )}
+          <form
+            onSubmit={(e) => {
+              handleSubmit(e);
+              setShowSuggestions(false);
+            }}
+            className="mt-4 flex gap-2"
+          >
             <Input
               value={input}
               onChange={handleInputChange}
