@@ -13,8 +13,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { SendHorizontal } from "lucide-react";
-import { eventTypeToPrompt } from "./constants";
+import { SendHorizontal, Mail } from "lucide-react";
+import { eventTypeToPrompt, initialMessage } from "./constants";
 import { v4 as uuidv4 } from "uuid";
 
 export default function ThankYouGPT() {
@@ -32,6 +32,19 @@ export default function ThankYouGPT() {
     "Jessica- Mckinsey, started in healthcare (like i did), likes equinox",
     "Jared- Trust fund, 6'5, blue eyes...",
   ];
+
+  const handleSendEmail = (content: string) => {
+    const subject =
+      content.match(/^Subject:\s*(.+)$/m)?.[1]?.trim() || "Thank You Email";
+    const body = encodeURIComponent(
+      content.replace(/^Subject:.*$/m, "").trim(),
+    );
+    window.open(
+      `https://mail.google.com/mail/?view=cm&fs=1&to=&su=${subject}&body=${body}`,
+      "_blank",
+    );
+  };
+
   const { messages, input, handleInputChange, handleSubmit, setInput } =
     useChat({
       api: "/api/chat",
@@ -45,8 +58,7 @@ export default function ThankYouGPT() {
         {
           id: "1",
           role: "assistant",
-          content:
-            "Hey! Welcome to ThankYouGPT. Any details you can share from the meeting?",
+          content: initialMessage,
         },
       ],
     });
@@ -136,6 +148,18 @@ export default function ThankYouGPT() {
                   <div className="whitespace-pre-wrap mb-1">
                     {message.content}
                   </div>
+                  {message.role === "assistant" &&
+                    message.content !== initialMessage && (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="mt-2"
+                        onClick={() => handleSendEmail(message.content)}
+                      >
+                        <Mail />
+                        {/*Send Email*/}
+                      </Button>
+                    )}
                   <div className="text-[10px] opacity-70 mb-1 text-right">
                     {new Date().toLocaleTimeString("en-US", {
                       hour: "2-digit",
@@ -164,6 +188,7 @@ export default function ThankYouGPT() {
               ))}
             </div>
           )}
+
           <form
             onSubmit={(e) => {
               handleSubmit(e);

@@ -11,3 +11,6 @@ export const formalityLevels: Record<number, string> = {
   4: "formal",
   5: "very formal",
 };
+
+export const initialMessage =
+  "Hey! Welcome to ThankYouGPT. Any details you can share from the meeting?";
