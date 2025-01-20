@@ -30,7 +30,7 @@ export default function ThankYouGPT() {
 
   const suggestions = [
     "Jessica- Mckinsey, started in healthcare (like i did), likes equinox",
-    "Jared- Trust fund, 6'5, blue eyes...",
+    "Chad- Finance, Trust fund, 6'5, blue eyes",
   ];
 
   const handleSendEmail = (content: string) => {
@@ -157,7 +157,6 @@ export default function ThankYouGPT() {
                         onClick={() => handleSendEmail(message.content)}
                       >
                         <Mail />
-                        {/*Send Email*/}
                       </Button>
                     )}
                   <div className="text-[10px] opacity-70 mb-1 text-right">
