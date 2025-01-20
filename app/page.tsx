@@ -176,18 +176,17 @@ export default function ThankYouGPT() {
             <div ref={messagesEndRef} />
           </div>
           {showSuggestions && (
-            <div className="flex flex-wrap gap-2 mb-1 mx-2">
+            <div className="flex flex-col gap-2 mb-1 mx-2">
               {suggestions.map((suggestion, index) => (
                 <Button
                   key={index}
                   size="sm"
-                  className="text-xs sm:text-sm bg-custom_primary text-gray-600 break-words w-full"
+                  className="text-xs sm:text-sm bg-custom_primary text-gray-600 break-words w-fit"
                   style={{ 
                     whiteSpace: 'normal',
                     height: 'auto',
                     padding: '8px 12px',
-                    textAlign: 'left',
-                    display: 'block'
+                    textAlign: 'left'
                   }}
                   onClick={() => {
                     setInput(suggestion);
