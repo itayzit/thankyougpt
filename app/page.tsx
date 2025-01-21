@@ -68,6 +68,17 @@ export default function ThankYouGPT() {
     }
     setPreviousMessagesLength(messages.length);
   }, [previousMessagesLength, messages]);
+
+  const lineDescriptions = {
+    3: 'Concise',
+    4: 'Brief',
+    5: 'Moderate',
+    6: 'Detailed',
+    7: 'Very Detailed',
+    8: 'Extensive',
+    9: 'Lengthy'
+  };
+
   return (
     <div className="container mx-auto p-2 sm:p-4 max-w-6xl">
       <div className="text-left mb-4 sm:mb-6 pl-2 sm:pl-4 pt-2 sm:pt-4">
@@ -81,18 +92,25 @@ export default function ThankYouGPT() {
         <div className="bg-white/80 p-4 sm:p-6 rounded-lg space-y-4 sm:space-y-6">
           <h2 className="text-lg font-semibold">Settings</h2>
 
-          <div className="space-y-2">
-            <label className="text-sm">How many lines?</label>
-            <Slider
-              value={[lines]}
-              onValueChange={(value) => setLines(value[0])}
-              min={3}
-              max={9}
-              step={1}
-            />
-            <div className="text-xs text-muted-foreground text-right">
+          <div className="space-y-4">
+            <label className="text-sm">Length</label>
+            <div className="pt-2">
+              <Slider
+                value={[lines]}
+                onValueChange={(value) => setLines(value[0])}
+                min={3}
+                max={9}
+                step={1}
+                marks={[
+                  { value: 3, label: 'Concise' },
+                  { value: 6, label: 'Detailed' },
+                  { value: 9, label: 'Lengthy' }
+                ]}
+              />
+            </div>
+            <div className="text-xs text-muted-foreground text-right mt-6">
               <span className="bg-secondary text-black px-2 py-1 rounded">
-                {lines} lines
+                {lineDescriptions[lines as keyof typeof lineDescriptions]}
               </span>
             </div>
           </div>
@@ -105,11 +123,11 @@ export default function ThankYouGPT() {
               min={1}
               max={5}
               step={1}
+              marks={[
+                { value: 1, label: 'Casual' },
+                { value: 5, label: 'Formal' }
+              ]}
             />
-            <div className="flex justify-between text-xs text-muted-foreground">
-              <span>Casual</span>
-              <span>Formal</span>
-            </div>
           </div>
 
           <div className="space-y-2">
