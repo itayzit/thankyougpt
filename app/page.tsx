@@ -255,7 +255,7 @@ export default function ThankYouGPT() {
         </div>
         <div className="text-center mt-4 text-sm text-gray-500">
           Developed by{" "}
-          <a href="https://www.linkedin.com/in/itayzitvar/">Itay Z</a> and{" "}
+          <a href="https://www.linkedin.com/in/itayzitvar/">Itay Zitvar</a> and{" "}
           <a href="https://www.linkedin.com/in/jonathan-schwartz8/">
             Jonathan Schwartz
           </a>
