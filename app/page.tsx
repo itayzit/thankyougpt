@@ -45,7 +45,7 @@ export default function ThankYouGPT() {
     );
   };
 
-  const { messages, input, handleInputChange, handleSubmit, setInput } =
+  const { messages, input, handleInputChange, handleSubmit, setInput, isLoading } =
     useChat({
       api: "/api/chat",
       body: {
@@ -168,6 +168,17 @@ export default function ThankYouGPT() {
                 </div>
               </div>
             ))}
+            {isLoading && (
+              <div className="flex justify-start">
+                <div className="rounded-lg px-4 py-2 bg-muted">
+                  <div className="animate-pulse flex space-x-1">
+                    <div className="h-2 w-2 bg-gray-400 rounded-full"></div>
+                    <div className="h-2 w-2 bg-gray-400 rounded-full"></div>
+                    <div className="h-2 w-2 bg-gray-400 rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+            )}
             <div ref={messagesEndRef} />
           </div>
           {showSuggestions && (
