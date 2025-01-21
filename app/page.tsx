@@ -253,7 +253,7 @@ export default function ThankYouGPT() {
             </Button>
           </form>
         </div>
-        <div className="text-center mt-4 text-sm text-gray-500">
+        <div className="text-center text-xs text-gray-500">
           Developed by{" "}
           <a href="https://www.linkedin.com/in/itayzitvar/">Itay Zitvar</a> and{" "}
           <a href="https://www.linkedin.com/in/jonathan-schwartz8/">
