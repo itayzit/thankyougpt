@@ -45,23 +45,29 @@ export default function ThankYouGPT() {
     );
   };
 
-  const { messages, input, handleInputChange, handleSubmit, setInput, isLoading } =
-    useChat({
-      api: "/api/chat",
-      body: {
-        lines,
-        formality,
-        eventType,
-        sessionId,
+  const {
+    messages,
+    input,
+    handleInputChange,
+    handleSubmit,
+    setInput,
+    isLoading,
+  } = useChat({
+    api: "/api/chat",
+    body: {
+      lines,
+      formality,
+      eventType,
+      sessionId,
+    },
+    initialMessages: [
+      {
+        id: "1",
+        role: "assistant",
+        content: initialMessage,
       },
-      initialMessages: [
-        {
-          id: "1",
-          role: "assistant",
-          content: initialMessage,
-        },
-      ],
-    });
+    ],
+  });
   useEffect(() => {
     if (messages.length > previousMessagesLength) {
       messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -70,13 +76,13 @@ export default function ThankYouGPT() {
   }, [previousMessagesLength, messages]);
 
   const lineDescriptions = {
-    3: 'Concise',
-    4: 'Brief',
-    5: 'Moderate',
-    6: 'Detailed',
-    7: 'Very Detailed',
-    8: 'Extensive',
-    9: 'Lengthy'
+    3: "Concise",
+    4: "Brief",
+    5: "Moderate",
+    6: "Detailed",
+    7: "Very Detailed",
+    8: "Extensive",
+    9: "Lengthy",
   };
 
   return (
@@ -102,9 +108,9 @@ export default function ThankYouGPT() {
                 max={9}
                 step={1}
                 marks={[
-                  { value: 3, label: 'Concise' },
-                  { value: 6, label: 'Detailed' },
-                  { value: 9, label: 'Lengthy' }
+                  { value: 3, label: "Concise" },
+                  { value: 6, label: "Detailed" },
+                  { value: 9, label: "Lengthy" },
                 ]}
               />
             </div>
@@ -124,8 +130,8 @@ export default function ThankYouGPT() {
               max={5}
               step={1}
               marks={[
-                { value: 1, label: 'Casual' },
-                { value: 5, label: 'Formal' }
+                { value: 1, label: "Casual" },
+                { value: 5, label: "Formal" },
               ]}
             />
           </div>
@@ -162,10 +168,10 @@ export default function ThankYouGPT() {
                       ? "bg-custom_primary text-primary-muted"
                       : "bg-muted"
                   }`}
-                  style={{ 
-                    wordBreak: 'break-word', 
-                    overflowWrap: 'break-word',
-                    whiteSpace: 'normal'
+                  style={{
+                    wordBreak: "break-word",
+                    overflowWrap: "break-word",
+                    whiteSpace: "normal",
                   }}
                 >
                   <div className="whitespace-pre-wrap break-words mb-1">
@@ -211,11 +217,11 @@ export default function ThankYouGPT() {
                   key={index}
                   size="sm"
                   className="text-xs sm:text-sm bg-custom_primary text-gray-600 break-words w-fit"
-                  style={{ 
-                    whiteSpace: 'normal',
-                    height: 'auto',
-                    padding: '8px 12px',
-                    textAlign: 'left'
+                  style={{
+                    whiteSpace: "normal",
+                    height: "auto",
+                    padding: "8px 12px",
+                    textAlign: "left",
                   }}
                   onClick={() => {
                     setInput(suggestion);
@@ -246,6 +252,13 @@ export default function ThankYouGPT() {
               <span className="sr-only">Send</span>
             </Button>
           </form>
+        </div>
+        <div className="text-center mt-4 text-sm text-gray-500">
+          Developed by{" "}
+          <a href="https://www.linkedin.com/in/itayzitvar/">Itay Z</a> and{" "}
+          <a href="https://www.linkedin.com/in/jonathan-schwartz8/">
+            Jonathan Schwartz
+          </a>
         </div>
       </div>
     </div>
