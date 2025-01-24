@@ -13,8 +13,8 @@ export const relationshipTypes: Record<string, string> = {
   NEVER_MET: "We never met",
   INTRODUCED: "Only intro'ed",
   BRIEFLY_MET: "We briefly met",
-  ONE_ON_ONE: "Had a 1:1",
-  INTERVIEW: "Had an interview",
+  ONE_ON_ONE: "We had a 1:1",
+  INTERVIEW: "We had an interview",
 } as const;
 
 export const goalTypes: Record<string, string> = {
