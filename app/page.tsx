@@ -82,8 +82,6 @@ export default function ThankYouGPT() {
       <div className="grid grid-cols-1 md:grid-cols-[350px_1fr] gap-3 sm:gap-4 bg-blue-50 rounded-lg p-3 sm:p-4">
         <div className="bg-white/80 rounded-lg flex flex-col h-[500px] sm:h-[600px]">
           <div className="p-4 sm:p-6 flex-1 overflow-y-auto">
-            <h2 className="text-lg font-semibold mb-4 sm:mb-6">Settings</h2>
-
             <div className="space-y-4">
               <label className="text-sm">How well do you know the person?</label>
               <div className="flex flex-wrap gap-2">
@@ -127,7 +125,7 @@ export default function ThankYouGPT() {
                 onClick={() => setShowAdvanced(!showAdvanced)}
                 className="flex items-center text-sm text-gray-600"
               >
-                Advanced settings
+                Advanced
                 <svg
                   className={`ml-2 h-4 w-4 transform ${showAdvanced ? 'rotate-180' : ''}`}
                   fill="none"
