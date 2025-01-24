@@ -4,12 +4,12 @@ export const formalityLevels: Record<number, string> = {
   3: "formal yet engaging",
   4: "formal",
   5: "very formal",
-};
+} as const;
 
 export const initialMessage =
   "Hey! Welcome to ThankYouGPT. Any details you can share from the meeting?";
 
-export const relationshipTypes = {
+export const relationshipTypes: Record<string, string> = {
   NEVER_MET: "We never met",
   INTRODUCED: "Only intro'ed",
   BRIEFLY_MET: "We briefly met",
@@ -17,7 +17,7 @@ export const relationshipTypes = {
   INTERVIEW: "Had an interview",
 } as const;
 
-export const goalTypes = {
+export const goalTypes: Record<string, string> = {
   THANKS: "Just say thanks",
   STAY_IN_TOUCH: "Offer to stay in touch",
   CONNECT: "Connect with another person",

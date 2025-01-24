@@ -12,13 +12,13 @@ import { v4 as uuidv4 } from "uuid";
 import { relationshipTypes, goalTypes, RelationshipType, GoalType } from "./constants";
 
 export default function ThankYouGPT() {
-  const [lines, setLines] = React.useState(6);
-  const [formality, setFormality] = React.useState(3);
+  const [lines, setLines] = useState(6);
+  const [formality, setFormality] = useState(3);
   const [showAdvanced, setShowAdvanced] = useState(false);
   const [relationship, setRelationship] = useState<RelationshipType>(relationshipTypes.BRIEFLY_MET);
   const [goal, setGoal] = useState<GoalType>(goalTypes.CONNECT);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const [previousMessagesLength, setPreviousMessagesLength] = React.useState(0);
+  const [previousMessagesLength, setPreviousMessagesLength] = useState(0);
   const [showSuggestions, setShowSuggestions] = useState(true);
   const [sessionId] = useState(uuidv4());
 
