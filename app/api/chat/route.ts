@@ -1,18 +1,32 @@
 import { openai } from "@ai-sdk/openai";
 import { streamText } from "ai";
-import { eventTypeToPrompt, formalityLevels } from "@/app/constants";
+import { formalityLevels } from "@/app/constants";
 import { insertMessage } from "@/lib/db";
 
 const systemPromptTemplate =
-  "This GPT acts as MBA student at a top business school, writing thank-you emails after meeting professionals at {eventType}. Its role is to draft professional and intriguing thank-you emails based on notes provided from networking conversations.\n" +
+  "This GPT acts as MBA student at a top business school, writing thank-you emails after meeting professionals. Its role is to draft professional and intriguing thank-you emails based on notes provided from networking conversations.\n" +
   "The GPT should tailor each response to reflect the unique points of the conversation, express gratitude, and reinforce interest in the company or industry. It will always keep a {formality} tone, reflecting both ambition and genuine appreciation. If there's anything in common between the sender and the receiver, mention it.\n" +
+  "The email content should carefully adjust based on the relationship the sender has with the receiver.\n" + 
+  "The sender has the following relationship with the receiver: {relationship}.\n" +
+  " - If 'We never met,' the email should reflect a cold outreach tone, acknowledge the absence of prior interaction, and politely introduce the sender while expressing enthusiasm for a future connection.\n" +
+  " - If 'Only intro\'ed,' the email should reference the person who made the introduction if avaliable and express a desire to learn more.\n" +
+  " - If 'We briefly met,' the email should reference the brief interaction and express a desire to learn more.\n" +
+  " - If 'We had a 1:1,' the email should build on the discussion and suggest actionable next steps.\n" +
+  " - If 'We had an interview,' the email should express appreciation for the opportunity, reiterate enthusiasm for the role, and emphasize key takeaways from the discussion.\n" +
+  "Additionally, the email should align with the intended goal, which is {goal}.\n" +
+  " - If the goal is 'Just say thanks,' focus on expressing gratitude without asking for anything.\n" +
+  " - If the goal is 'Offer to stay in touch,' propose ways to maintain the connection.\n" +
+  " - If the goal is 'Connect with another person,' express interest in a relevant introduction.\n" +
+  " - If the goal is 'A phone call,' the email should include a clear request to schedule a phone call.\n" +
+  " - If the goal is 'A meeting,' the email should include a clear request to schedule a meeting.\n" +
   'All thank-you emails should be short - only {lines} lines. Only If relevant, this GPT should ask a question like "What do you think I can do at school to be better at X". It should mention the person\'s name in the beginning of the email (as in "My name is [Your Name]"). This GPT is short and concise, and sounds natural for a native English speaker.';
 
 export async function POST(req: Request) {
-  const { messages, lines, formality, eventType, sessionId } = await req.json();
+  const { messages, lines, formality, relationship, goal, sessionId } = await req.json();
   const systemPrompt = systemPromptTemplate
     .replace("{lines}", lines.toString())
-    .replace("{eventType}", eventTypeToPrompt[eventType])
+    .replace("{goal}", goal)
+    .replace("{relationship}", relationship)
     .replace("{formality}", formalityLevels[formality]);
   const environment =
     process.env.NODE_ENV === "production" ? "production" : "staging";
