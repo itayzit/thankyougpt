@@ -1,9 +1,3 @@
-export const eventTypeToPrompt: Record<string, string> = {
-  "Coffee chat": "a coffee chat",
-  EIS: "an employer information session",
-  "Job interview": "a job interview",
-  Other: "recruiting events",
-};
 export const formalityLevels: Record<number, string> = {
   1: "very casual",
   2: "casual",
@@ -14,3 +8,23 @@ export const formalityLevels: Record<number, string> = {
 
 export const initialMessage =
   "Hey! Welcome to ThankYouGPT. Any details you can share from the meeting?";
+
+export const relationshipTypes = {
+  NEVER_MET: "We never met",
+  INTRODUCED: "Only intro'ed",
+  BRIEFLY_MET: "We briefly met",
+  ONE_ON_ONE: "Had a 1:1",
+  INTERVIEW: "Had an interview",
+} as const;
+
+export const goalTypes = {
+  THANKS: "Just say thanks",
+  STAY_IN_TOUCH: "Offer to stay in touch",
+  CONNECT: "Connect with another person",
+  PHONE_CALL: "A phone call",
+  MEETING: "A meeting",
+} as const;
+
+// Type helpers if needed
+export type RelationshipType = typeof relationshipTypes[keyof typeof relationshipTypes];
+export type GoalType = typeof goalTypes[keyof typeof goalTypes];
