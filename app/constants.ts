@@ -7,7 +7,7 @@ export const formalityLevels: Record<number, string> = {
 } as const;
 
 export const initialMessage =
-  "Hey! Welcome to ThankYouGPT. Any details you can share from the meeting?";
+  "Hey! Welcome to ThankYouGPT. Any details you can share about the person?";
 
 export const relationshipTypes: Record<string, string> = {
   NEVER_MET: "We never met",

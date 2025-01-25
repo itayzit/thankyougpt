@@ -80,7 +80,7 @@ export default function ThankYouGPT() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-[350px_1fr] gap-3 sm:gap-4 bg-blue-50 rounded-lg p-3 sm:p-4">
-        <div className="bg-white/80 rounded-lg flex flex-col h-[500px] sm:h-[600px]">
+        <div className="bg-white/80 rounded-lg flex flex-col h-auto md:h-[600px]">
           <div className="p-4 sm:p-6 flex-1 overflow-y-auto">
             <div className="space-y-4">
               <label className="text-sm">How well do you know the person?</label>
