@@ -75,7 +75,7 @@ export default function ThankYouGPT() {
       <div className="text-left mb-4 sm:mb-6 pl-2 sm:pl-4 pt-2 sm:pt-4">
         <h1 className="text-2xl font-bold text-black mb-1">ThankYouGPT</h1>
         <p className="text-gray-600">
-          Thank you emails, reach-outs - everything you need for you MBA.
+          Thank you emails, reach-outs - everything you need for your MBA networking.
         </p>
       </div>
 
