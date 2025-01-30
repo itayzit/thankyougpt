@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Thank You GPT",
-  description: "Effortless thank-you emails for ivy league students",
+  description: "Effortless networking for MBA students",
 };
 
 export default function RootLayout({
