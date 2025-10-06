@@ -24,7 +24,7 @@ export default function ThankYouGPT() {
 
   const suggestions = [
     "Jessica- Mckinsey, started in healthcare (like i did), likes equinox",
-    "Chad- Finance, Trust fund, 6'5, blue eyes",
+    "Chad- works in finance, Trust fund, 6'5, blue eyes",
   ];
 
   const handleSendEmail = (content: string) => {

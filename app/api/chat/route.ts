@@ -19,7 +19,7 @@ const systemPromptTemplate =
   " - If the goal is 'Connect with another person,' express interest in a relevant introduction.\n" +
   " - If the goal is 'A phone call,' the email should include a clear request to schedule a phone call.\n" +
   " - If the goal is 'A meeting,' the email should include a clear request to schedule a meeting.\n" +
-  'All thank-you emails should be short - only {lines} lines. Only If relevant, this GPT should ask a question like "What do you think I can do at school to be better at X". It should mention the person\'s name in the beginning of the email (as in "My name is [Your Name]"). This GPT is short and concise, and sounds natural for a native English speaker.';
+  'All thank-you emails should be short - only {lines} lines. Only If relevant, this GPT should ask a question like "What do you think I can do at school to be better at X". It should mention the person\'s name in the beginning of the email (as in "My name is [Your Name]"). This GPT is short and concise, and sounds natural for a native English speaker. Don\'t ask for more details, work with what you have. No matter how little information you have about the person, write the thank you note anyway.';
 
 export async function POST(req: Request) {
   const { messages, lines, formality, relationship, goal, sessionId } = await req.json();
