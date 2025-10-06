@@ -40,7 +40,7 @@ export async function POST(req: Request) {
   );
 
   const result = streamText({
-    model: openai("gpt-4"),
+    model: openai("gpt-4o"),
     messages: [{ role: "system", content: systemPrompt }, ...messages],
     onFinish: async (completion) => {
       await insertMessage("assistant", completion.text, sessionId, environment);
