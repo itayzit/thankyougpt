@@ -1,0 +1,28 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="14">
+            <item index="0" class="java.lang.String" itemvalue="nlu-lib" />
+            <item index="1" class="java.lang.String" itemvalue="gamla" />
+            <item index="2" class="java.lang.String" itemvalue="mpi4py" />
+            <item index="3" class="java.lang.String" itemvalue="pytest-test-groups" />
+            <item index="4" class="java.lang.String" itemvalue="sklearn" />
+            <item index="5" class="java.lang.String" itemvalue="typing" />
+            <item index="6" class="java.lang.String" itemvalue="imblearn" />
+            <item index="7" class="java.lang.String" itemvalue="argparse" />
+            <item index="8" class="java.lang.String" itemvalue="pytest-sugar" />
+            <item index="9" class="java.lang.String" itemvalue="uvicorn" />
+            <item index="10" class="java.lang.String" itemvalue="computation-graph" />
+            <item index="11" class="java.lang.String" itemvalue="async-timeout" />
+            <item index="12" class="java.lang.String" itemvalue="lxml" />
+            <item index="13" class="java.lang.String" itemvalue="knowledge-graph" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

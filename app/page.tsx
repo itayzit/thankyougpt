@@ -24,7 +24,7 @@ export default function ThankYouGPT() {
 
   const suggestions = [
     "Jessica- Mckinsey, started in healthcare (like i did), likes equinox",
-    "Chad- Finance, Trust fund, 6'5, blue eyes",
+    "Chad- works in finance, Trust fund, 6'5, blue eyes",
   ];
 
   const handleSendEmail = (content: string) => {
@@ -75,7 +75,7 @@ export default function ThankYouGPT() {
       <div className="text-left mb-4 sm:mb-6 pl-2 sm:pl-4 pt-2 sm:pt-4">
         <h1 className="text-2xl font-bold text-black mb-1">ThankYouGPT</h1>
         <p className="text-gray-600">
-          Effortless thank-you emails for ivy league students.
+          Thank you emails, reach-outs - everything you need for your MBA networking.
         </p>
       </div>
 

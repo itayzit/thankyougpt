@@ -1,5 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f91bce55-dcd0-47e8-be8f-8a352b8f6c45" name="Changes" comment="add analytics">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="origin/main" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;itayzit&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/itayzit/thankyougpt.git&quot;,
+    &quot;accountId&quot;: &quot;dae99cec-dcd9-4051-9dc7-61362e3a3aa9&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2rXyAddUZS1Sjvezi700nwcXLNM" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -7,16 +49,255 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/itayzit/projects/thankyougpt&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/itayzit/projects/thankyougpt/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;JSON&quot;
+    ]
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="es6.move.members.recent.items">
+      <recent name="$PROJECT_DIR$/app/constants.ts" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PY-241.18034.82" />
+        <option value="bundled-python-sdk-975db3bf15a3-2767605e8bc2-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.18034.82" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+      <changelist id="f91bce55-dcd0-47e8-be8f-8a352b8f6c45" name="Changes" comment="" />
       <created>1694431146824</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1694431146824</updated>
+      <workItem from="1736719573265" duration="56981000" />
+      <workItem from="1737423833568" duration="3017000" />
+      <workItem from="1737762937924" duration="25553000" />
+      <workItem from="1741372588795" duration="598000" />
+      <workItem from="1742616276372" duration="305000" />
+      <workItem from="1742616597174" duration="599000" />
+      <workItem from="1742943159090" duration="597000" />
+      <workItem from="1742944599195" duration="619000" />
+      <workItem from="1744916346920" duration="11106000" />
+      <workItem from="1758075870033" duration="1020000" />
     </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <option name="closed" value="true" />
+      <created>1736760428630</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1736760428630</updated>
+    </task>
+    <task id="LOCAL-00002" summary="update gitignore">
+      <option name="closed" value="true" />
+      <created>1736763076303</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1736763076303</updated>
+    </task>
+    <task id="LOCAL-00003" summary="scroll to the end">
+      <option name="closed" value="true" />
+      <created>1736764207635</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1736764207635</updated>
+    </task>
+    <task id="LOCAL-00004" summary="change icons and title">
+      <option name="closed" value="true" />
+      <created>1736765496542</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1736765496542</updated>
+    </task>
+    <task id="LOCAL-00005" summary="scroll into view only when message changes, change maximum lines, put title on the left">
+      <option name="closed" value="true" />
+      <created>1737026340027</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1737026340027</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Improve design accroding to revital's feedback. refactor some things to constants.ts. Run prettier">
+      <option name="closed" value="true" />
+      <created>1737219590760</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1737219590760</updated>
+    </task>
+    <task id="LOCAL-00007" summary="commit package.json and package-lock.json">
+      <option name="closed" value="true" />
+      <created>1737219630835</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1737219630835</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fix import">
+      <option name="closed" value="true" />
+      <created>1737219735899</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1737219735899</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Add suggestion buttons">
+      <option name="closed" value="true" />
+      <created>1737226223188</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1737226223188</updated>
+    </task>
+    <task id="LOCAL-00010" summary="save every message to the database">
+      <option name="closed" value="true" />
+      <created>1737230977115</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1737230977115</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add button to send email from message">
+      <option name="closed" value="true" />
+      <created>1737233248168</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1737233248168</updated>
+    </task>
+    <task id="LOCAL-00012" summary="change description">
+      <option name="closed" value="true" />
+      <created>1737233550320</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1737233550320</updated>
+    </task>
+    <task id="LOCAL-00013" summary="change example">
+      <option name="closed" value="true" />
+      <created>1737397190490</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1737397190490</updated>
+    </task>
+    <task id="LOCAL-00014" summary="1. add footnote with credits&#10;2. apply prettier">
+      <option name="closed" value="true" />
+      <created>1737423075573</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1737423075573</updated>
+    </task>
+    <task id="LOCAL-00015" summary="add family name">
+      <option name="closed" value="true" />
+      <created>1737423122648</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1737423122648</updated>
+    </task>
+    <task id="LOCAL-00016" summary="change text size">
+      <option name="closed" value="true" />
+      <created>1737423212972</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1737423212972</updated>
+    </task>
+    <task id="LOCAL-00017" summary="change formality and description">
+      <option name="closed" value="true" />
+      <created>1738277164199</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1738277164199</updated>
+    </task>
+    <task id="LOCAL-00018" summary="change subtitle">
+      <option name="closed" value="true" />
+      <created>1738277648278</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1738277648278</updated>
+    </task>
+    <task id="LOCAL-00019" summary="typo">
+      <option name="closed" value="true" />
+      <created>1738277768050</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1738277768050</updated>
+    </task>
+    <task id="LOCAL-00020" summary="add speed insights">
+      <option name="closed" value="true" />
+      <created>1738278072885</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1738278072885</updated>
+    </task>
+    <task id="LOCAL-00021" summary="add analytics">
+      <option name="closed" value="true" />
+      <created>1739250786889</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1739250786889</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial commit" />
+    <MESSAGE value="update gitignore" />
+    <MESSAGE value="scroll to the end" />
+    <MESSAGE value="change icons and title" />
+    <MESSAGE value="scroll into view only when message changes, change maximum lines, put title on the left" />
+    <MESSAGE value="Improve design accroding to revital's feedback. refactor some things to constants.ts. Run prettier" />
+    <MESSAGE value="commit package.json and package-lock.json" />
+    <MESSAGE value="fix import" />
+    <MESSAGE value="Add suggestion buttons" />
+    <MESSAGE value="save every message to the database" />
+    <MESSAGE value="add button to send email from message" />
+    <MESSAGE value="change description" />
+    <MESSAGE value="change example" />
+    <MESSAGE value="1. add footnote with credits&#10;2. apply prettier" />
+    <MESSAGE value="add family name" />
+    <MESSAGE value="change text size" />
+    <MESSAGE value="change formality and description" />
+    <MESSAGE value="change subtitle" />
+    <MESSAGE value="typo" />
+    <MESSAGE value="add speed insights" />
+    <MESSAGE value="add analytics" />
+    <option name="LAST_COMMIT_MESSAGE" value="add analytics" />
   </component>
 </project>

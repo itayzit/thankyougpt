@@ -1,7 +1,7 @@
 export const formalityLevels: Record<number, string> = {
   1: "very casual",
   2: "casual",
-  3: "formal yet engaging",
+  3: "engaging",
   4: "formal",
   5: "very formal",
 } as const;
