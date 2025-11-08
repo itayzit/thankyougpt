@@ -12,15 +12,28 @@ ThankYouGPT helps you craft personalized thank you emails and networking message
 
 ![ThankYouGPT Interface](public/screenshot.png)
 
-The interface features:
 - **Left sidebar:** Select relationship level and communication goal
 - **Right panel:** Chat interface where you share details about the person
 
 ## Run locally
 
+1. Clone the repository and install dependencies:
+
 ```bash
 git clone https://github.com/itayzit/thankyougpt.git
 npm install
+```
+
+2. Create a `.env.local` file in the project root and add your API keys:
+
+```
+OPENAI_API_KEY=your_openai_api_key_here
+DATABASE_URL=your_database_url_here
+```
+
+3. Start the development server:
+
+```bash
 npm run dev
 ```
 
