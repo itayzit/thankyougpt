@@ -10,7 +10,7 @@ ThankYouGPT helps you craft personalized thank you emails and networking message
 
 ## How it looks
 
-![ThankYouGPT Interface](./screenshot.png)
+![ThankYouGPT Interface](public/screenshot.png)
 
 The interface features:
 - **Left sidebar:** Select relationship level and communication goal
@@ -19,7 +19,7 @@ The interface features:
 ## Run locally
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/itayzit/thankyougpt.git
 npm install
 npm run dev
 ```
